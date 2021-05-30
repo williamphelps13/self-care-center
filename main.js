@@ -40,7 +40,7 @@ var mantras = [
 ];
 
 messageButton.addEventListener('click', showRandomMessage);
-// clearButton.addEventListener('click', );
+clearButton.addEventListener('click', clearMessage);
 
 function showRandomMessage() {
   hide(meditationImage)
@@ -66,19 +66,19 @@ function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
 };
 
-///user clicks on radio input
-//user clicks on recieve message button
-//receive message button has a querySelector and an addEventListener
-//event listener triggers a function
-//if affirmation input is selected then a random string from the affirmations array is displayed in the p message Element
-//if mantra input is selected then a random string from the mantras array is displayed in the p message Element
-//need to be able to tell the function which radio button is selected
+function clearMessage(){
+  hide(message)
+  show(meditationImage)
+}
+
 
 
 
 
 //NEXT:
 // User should not be able to click the “Receive Message” button unless they have selected a message option.
+
+//DOUBLE CHECK:
 // The user can click a clear button, which clears the page of any message.
 // User should only be able to click the clear button if a message is visible.
 // When the clear button is clicked and the message is removed, the image of the meditation icon should re-appear.
