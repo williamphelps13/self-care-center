@@ -43,42 +43,26 @@ messageButton.addEventListener('click', showRandomMessage);
 clearButton.addEventListener('click', clearMessage);
 
 function showRandomMessage() {
-  hide(meditationImage)
-  show(message)
   if (affirmationRadio.checked) {
     message.innerText = affirmations[getRandomIndex(affirmations)];
-  } else if (mantraRadio.checked){
+    toggle(meditationImage, message);
+  } else if (mantraRadio.checked) {
     message.innerText = mantras[getRandomIndex(mantras)];
+    toggle(meditationImage, message);
   } else {
-    message.innerText = "✨ Select affirmation or mantra to see a message ✨"
+    return;
   }
-}
-
-function hide(element) {
-  element.classList.add('hidden')
-};
-
-function show(element) {
-  element.classList.remove('hidden')
 };
 
 function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
 };
 
-function clearMessage(){
-  hide(message)
-  show(meditationImage)
-}
+function toggle(hideElement, showElement) {
+  hideElement.classList.add('hidden');
+  showElement.classList.remove('hidden');
+};
 
-
-
-
-
-//NEXT:
-// User should not be able to click the “Receive Message” button unless they have selected a message option.
-
-//DOUBLE CHECK:
-// The user can click a clear button, which clears the page of any message.
-// User should only be able to click the clear button if a message is visible.
-// When the clear button is clicked and the message is removed, the image of the meditation icon should re-appear.
+function clearMessage() {
+  toggle(message, meditationImage);
+};
