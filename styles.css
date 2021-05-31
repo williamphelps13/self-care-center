@@ -19,7 +19,7 @@ h2 {
   margin-bottom: 10px;
 }
 
-section {
+.input-form {
   width: 560px;
   height: 95px;
   background-color: #ffffff;
@@ -74,7 +74,7 @@ section {
   border-radius: 5px;
 }
 
-article {
+.message-field {
   width: 830px;
   height: 150px;
   margin: 120px 300px 300px;
